@@ -10,6 +10,13 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(bodyParser.json());
 
+const corsOptions = {
+  origin: 'http://localhost:5173',
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
+
 // Connect to MongoDB
 mongoose.connect('mongodb+srv://ossabhinay:2nxWKTWuWiflOTtM@cluster0.0yf1l.mongodb.net/mydatabase?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
